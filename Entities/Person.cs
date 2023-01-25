@@ -2,15 +2,14 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Entities
+namespace Entities;
+
+/// <summary>
+/// Person domain model class
+/// </summary>
+public class Person
 {
-  /// <summary>
-  /// Person domain model class
-  /// </summary>
-  public class Person
-  {
-    [Key]
-    public Guid PersonID { get; set; }
+    [Key] public Guid PersonID { get; set; }
 
     [StringLength(40)] //nvarchar(40)
     //[Required]
@@ -37,7 +36,5 @@ namespace Entities
     public string? TIN { get; set; }
 
 
-    [ForeignKey("CountryID")]
-    public virtual Country? Country { get; set; }
-  }
+    [ForeignKey("CountryID")] public virtual Country? Country { get; set; }
 }

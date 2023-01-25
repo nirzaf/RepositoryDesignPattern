@@ -1,15 +1,18 @@
 ﻿using System;
+
 using ServiceContracts.Enums;
+
 using Entities;
+
 using System.ComponentModel.DataAnnotations;
 
-namespace ServiceContracts.DTO
+namespace ServiceContracts.DTO;
+
+/// <summary>
+/// Acts as a DTO for inserting a new person
+/// </summary>
+public class PersonAddRequest
 {
-  /// <summary>
-  /// Acts as a DTO for inserting a new person
-  /// </summary>
-  public class PersonAddRequest
-  {
     [Required(ErrorMessage = "Person Name can't be blank")]
     public string? PersonName { get; set; }
 
@@ -18,8 +21,7 @@ namespace ServiceContracts.DTO
     [DataType(DataType.EmailAddress)]
     public string? Email { get; set; }
 
-    [DataType(DataType.Date)]
-    public DateTime? DateOfBirth { get; set; }
+    [DataType(DataType.Date)] public DateTime? DateOfBirth { get; set; }
 
     [Required(ErrorMessage = "Please select gender of the person")]
     public GenderOptions? Gender { get; set; }
@@ -36,7 +38,10 @@ namespace ServiceContracts.DTO
     /// <returns></returns>
     public Person ToPerson()
     {
-      return new Person() { PersonName = PersonName, Email = Email, DateOfBirth = DateOfBirth, Gender = Gender.ToString(), Address = Address, CountryID = CountryID, ReceiveNewsLetters = ReceiveNewsLetters };
+        return new Person()
+        {
+            PersonName = PersonName, Email = Email, DateOfBirth = DateOfBirth, Gender = Gender.ToString(),
+            Address = Address, CountryID = CountryID, ReceiveNewsLetters = ReceiveNewsLetters
+        };
     }
-  }
 }
