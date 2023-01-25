@@ -16,12 +16,7 @@ using ServiceContracts.Enums;
 using Xunit.Abstractions;
 
 using System.Linq;
-
-using Microsoft.EntityFrameworkCore;
-
 using System.Threading.Tasks;
-
-using EntityFrameworkCoreMock;
 
 using AutoFixture;
 

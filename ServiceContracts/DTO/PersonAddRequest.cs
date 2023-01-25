@@ -1,6 +1,4 @@
-﻿using System;
-
-using ServiceContracts.Enums;
+﻿using ServiceContracts.Enums;
 
 using Entities;
 

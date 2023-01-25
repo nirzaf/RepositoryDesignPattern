@@ -1,7 +1,5 @@
 ﻿using ServiceContracts.DTO;
 
-using System.Threading.Tasks;
-
 using Microsoft.AspNetCore.Http;
 
 namespace ServiceContracts;
